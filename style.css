@@ -1,0 +1,44 @@
+/* rule 1 */
+
+.subsection {
+    color: blue;
+} 
+
+/* rule 2 */
+.main .list {
+    color: red;
+}
+
+/* note:In the example above, both rules are using only class selectors, but rule 2 is more specific because it is using more class selectors, so the color: red; declaration would take precedence. */
+
+/*e.g. 2 */
+
+/* rule 1 */
+#subsection {
+    color: blue;
+}
+
+/* rule 2 */
+.main .list {
+    color: red;
+}
+
+/* note: In the example above, despite rule 2 having more class selectors than ID selectors, rule 1 is more specific because ID beats class. In this case, the color: blue; declaration would take precedence. */
+
+/* final e.g */
+
+/* rule 1 */
+#subsection {
+    background-color: yellow;
+    color: blue;
+  }
+  
+  /* rule 2 */
+  .main #subsection {
+   color: red;
+  }
+
+  /* n this final example, the first rule uses an ID selector, while the second rule combines an ID selector with a class selector. Therefore, neither rule is using a more specific selector than the other. The cascade then checks the number of each selector type. Both rules have only one ID selector, but rule 2 has a class selector in addition to the ID selector, so rule 2 has a higher specificity!
+
+While the color: red declaration would take precedence, the background-color: yellow declaration would still be applied since there’s no conflicting declaration for it. */
+
